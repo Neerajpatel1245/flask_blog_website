@@ -1,0 +1,24 @@
+{
+
+    "params":{
+        "local_server":"True",
+        "local_uri": "mysql://root:@localhost/blog",
+        "prod_uri": "mysql://root:@localhost/blog",
+        "fb_url": "https://facebook.com/blog",
+        "twitter": "https://twitter.com/blog",
+        "github": "https://github.com/blog",
+        "blog_name": "General blog",
+        "tagline": "A Blog Liked By Everyone",
+        "gmail-user": "np899355@gmail.com",
+        "gmail-password": "lbcvbzxqibpdlsqx",
+        "about_text": "Hi Iam Neeraj Patel. I enjoy doing progrmming the thing you are exploring is a result of my time pass.",
+        "no_of_post": 2 ,
+        "admin_mail": "np899355@gmail.com",
+        "admin_password": "kuchbhi",
+        "upload_location": "F:\\VS Code\\Programs\\flask\\Bootstrap Website\\static\\assets\\img"
+    }
+
+
+
+
+}
