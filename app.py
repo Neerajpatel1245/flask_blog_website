@@ -1,4 +1,4 @@
-from flask import Flask , render_template , redirect , url_for , request , session
+from flask import Flask , render_template , redirect , url_for , request , session , flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
@@ -60,6 +60,8 @@ class Posts(db.Model):
 
 @app.route("/")
 def home():
+     flash("This is an simple example of message flashing" , "success")
+     flash("You can flash  messages in for loop")
      posts= Posts.query.filter_by().all()
      #[0:params['no_of_post']]
      last=math.ceil(len(posts)/int(params['no_of_post']))
@@ -115,7 +117,7 @@ def edit(Srno):
                     return redirect('/edit/Srno')
 
           post=Posts.query.filter_by(Srno=Srno).first()
-          return render_template('edit.html' , params=params , post=post)
+          return render_template('edit.html' , params=params , post=post , Srno=Srno)
 
 @app.route("/dashboard" , methods=['GET' , 'POST'])
 def dashboard():
@@ -190,7 +192,7 @@ def contact():
           sender="email" , 
           recipients=[params['gmail-user']],
           body= message +'\n' + phone_num)
-
+          flash("Thanks for submitting. We will try to solve your query/problem" , "success")
 
      return render_template('contact.html' , params=params)
 
